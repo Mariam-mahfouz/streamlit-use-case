@@ -37,16 +37,14 @@ df = pd.read_csv('https://raw.githubusercontent.com/ReyadGH/streamlit-use-case/m
 
 st.title('Find Your Perfect Used Car!')
 
-st.title('Introduction')
-st.markdown('Welcome to our recommender board on finding the perfect used car for your needs!\nToday, we’ll showcase how our system helps customers find their perfect match')
+#st.title('Introduction')
+#st.markdown('Welcome to our recommender board on finding the perfect used car for your needs!\nToday, we’ll showcase how our system helps customers find their perfect match')
 
-st.title('Use case scenario')
+#st.title('Use case scenario')
 st.markdown('Imagine yourself in car auction, and you have specific needs and requirements and you need a certaine car, but you are undecided, so you would see the most popular car in your region that satisfy your needs.')
 
-st.title('Streamlit Storytelling')
-st.markdown('We’ve created a user-friendly interface using Streamlit. Users can input their preferences: make, maximum price, maximum mileage, and minimum year. Our system then searches through the data store to find matching cars')
-
-selected_region = st.selectbox('Select a region:', df['Region'].unique())
+#st.title('Streamlit Storytelling')
+#st.markdown('We’ve created a user-friendly interface using Streamlit. Users can input their preferences: make, maximum price, maximum mileage, and minimum year. Our system then searches through the data store to find matching cars')
 
 
 s = ""
@@ -75,6 +73,9 @@ top_cars = top_cars.sort_values(by='count', ascending=False)
 
 
 st.title('Popular cars in your region')
+
+selected_region = st.selectbox('Select a region:', df['Region'].unique())
+
 st.bar_chart(
    top_cars.head(10), x="Type", y='count', color="#FF0000" # Optional
 )
