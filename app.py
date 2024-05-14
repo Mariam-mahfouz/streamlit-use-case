@@ -32,8 +32,8 @@ import plotly.graph_objects as go
 st.image("260px-Syarah_New_Logo_-_white_bg_version.png", width=250)
 
 
-clean = pd.read_csv('https://github.com/ReyadGH/streamlit-use-case/blob/main/Data/clean.csv')
-df = pd.read_csv('https://github.com/ReyadGH/streamlit-use-case/blob/main/Data/data_saudi_used_cars.csv')
+clean = pd.read_csv('https://raw.githubusercontent.com/ReyadGH/streamlit-use-case/main/Data/clean.csv')
+df = pd.read_csv('https://raw.githubusercontent.com/ReyadGH/streamlit-use-case/main/Data/data_saudi_used_cars.csv')
 
 st.title('Find Your Perfect Used Car!')
 
