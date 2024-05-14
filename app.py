@@ -47,6 +47,20 @@ st.markdown('Imagine yourself in car auction, and you have specific needs and re
 #st.markdown('We’ve created a user-friendly interface using Streamlit. Users can input their preferences: make, maximum price, maximum mileage, and minimum year. Our system then searches through the data store to find matching cars')
 
 
+# Filter dataframe based on the selected region
+region_df = df[df['Region'] == selected_region]
+
+
+# Group by car name and count occurrences
+top_cars = region_df.groupby('Type').size().reset_index(name='count')
+
+top_cars = top_cars.sort_values(by='count', ascending=False)
+
+
+st.title('Popular cars in your region')
+
+selected_region = st.selectbox('Select a region:', df['Region'].unique())
+
 s = ""
 
 if selected_region == 'Riyadh':
@@ -61,20 +75,6 @@ elif selected_region == 'Abha':
     s = 'Abha, known for its cooler climate and picturesque scenery, sees a mix of fuel-efficient and versatile vehicles. These models are appreciated for their ability to handle both city driving and occasional trips to the surrounding hilly areas.'
 else:
     s= "Esraa is the best"
-
-# Filter dataframe based on the selected region
-region_df = df[df['Region'] == selected_region]
-
-
-# Group by car name and count occurrences
-top_cars = region_df.groupby('Type').size().reset_index(name='count')
-
-top_cars = top_cars.sort_values(by='count', ascending=False)
-
-
-st.title('Popular cars in your region')
-
-selected_region = st.selectbox('Select a region:', df['Region'].unique())
 
 st.bar_chart(
    top_cars.head(10), x="Type", y='count', color="#FF0000" # Optional
