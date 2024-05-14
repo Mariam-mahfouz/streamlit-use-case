@@ -46,6 +46,9 @@ st.markdown('Imagine yourself in car auction, and you have specific needs and re
 #st.title('Streamlit Storytelling')
 #st.markdown('We’ve created a user-friendly interface using Streamlit. Users can input their preferences: make, maximum price, maximum mileage, and minimum year. Our system then searches through the data store to find matching cars')
 
+st.title('Popular cars in your region')
+
+
 selected_region = st.selectbox('Select a region:', df['Region'].unique())
 
 s = ""
@@ -72,8 +75,6 @@ top_cars = region_df.groupby('Type').size().reset_index(name='count')
 
 top_cars = top_cars.sort_values(by='count', ascending=False)
 
-
-st.title('Popular cars in your region')
 
 
 st.bar_chart(
