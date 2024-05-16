@@ -1,6 +1,6 @@
 ## use-case-4
 
-[Explore deployment repo](https://github.com/ReyadGH/use-case-4-deployment)
+[Explore main repo](https://github.com/ReyadGH/use-case-4)
 
 [Explore the app](https://reyadgh.streamlit.app/)
 
